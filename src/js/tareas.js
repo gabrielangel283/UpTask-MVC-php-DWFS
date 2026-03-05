@@ -231,7 +231,7 @@
         datos.append('proyectoId', proyectoId);
 
         try {
-            const url = 'http://localhost:3000/api/tarea';
+            const url = `${location.origin}/api/tarea`;
 
             const respuesta = await fetch(url, {
                 method: 'POST',
@@ -288,7 +288,7 @@
 
 
         try {
-            const url = 'http://localhost:3000/api/tarea/actualizar';
+            const url = `${location.origin}/api/tarea/actualizar`;
 
             const respuesta = await fetch(url, {
                 method: 'POST',
@@ -349,7 +349,7 @@
         datos.append('proyectoId', obtenerProyecto());
 
         try {
-            const url = 'http://localhost:3000/api/tarea/eliminar';
+            const url = `${location.origin}/api/tarea/eliminar`;
 
             const respuesta = await fetch(url, {
                 method: 'POST',
@@ -359,11 +359,6 @@
             const resultado = await respuesta.json();
 
             if (resultado.resultado) {
-                // mostrarAlerta(
-                //     resultado.mensaje,
-                //     resultado.tipo,
-                //     document.querySelector('.contenedor-nueva-tarea')
-                // );
 
                 Swal.fire('Eliminado!', resultado.mensaje, 'success')
 
