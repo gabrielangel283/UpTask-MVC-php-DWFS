@@ -29,7 +29,7 @@ $router->post('/reestablecer', [LoginController::class, 'reestablecer']);
 
 // CONFIRMACION DE LA CUENTA
 $router->get('/mensaje', [LoginController::class, 'mensaje']);
-$router->get('/confirmar', [LoginController::class, 'confirmar']);
+$router->get('/confirmar-cuenta', [LoginController::class, 'confirmar']);
 
 /* PARTE PRIVADA */
 
