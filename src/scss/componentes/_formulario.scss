@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.formulario {
+    margin-top: 5rem;
+
+    .campo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+        gap: 0.8rem;
+
+        input {
+            padding: 1rem;
+            border: 1px solid rgb(165, 155, 155);
+            background-color: lighten($color: v.$gris, $amount: 40%);
+            width: 90%;
+        }
+
+        label {
+            font-weight: 500;
+        }
+
+        @include m.telefono {
+            flex-direction: row;
+
+            label {
+                flex: 0 0 10rem;
+            }
+
+            input {
+                flex: 1;
+            }
+        }
+
+    }
+
+
+}
