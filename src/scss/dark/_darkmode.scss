@@ -18,8 +18,14 @@
 
     .descripcion-pagina,
     .formulario .campo input,
-    .nombre-pagina {
+    .nombre-pagina,
+    .no-proyectos {
         color: v.$blanco;
+    }
+
+    .comenzar-crear {
+        color: v.$naranja !important;
+        font-style: italic;
     }
 
     .formulario .campo input,

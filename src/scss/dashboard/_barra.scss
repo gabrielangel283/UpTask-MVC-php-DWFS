@@ -15,11 +15,20 @@
     h1 {
         color: v.$blanco;
         margin: 0;
+        font-size: 4.5rem;
+
+        @include m.telefono {
+            font-size: 7rem;
+        }
     }
 
     .menu {
         img {
-            width: 7rem;
+            width: 3.5rem;
+
+            @include m.telefono {
+                width: 7rem;
+            }
 
             &:hover {
                 cursor: pointer;
