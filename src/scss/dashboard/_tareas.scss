@@ -8,7 +8,6 @@
     .agregar-tarea {
         @include m.boton(v.$cyan, v.$blanco);
     }
-
 }
 
 .listado-tareas {
@@ -18,12 +17,13 @@
 
     .no-tareas {
         text-align: center;
-        font-size: 2rem;
+        font-size: 3.5rem;
         margin-top: 3rem;
+
+        @include m.telefono {
+            font-size: 5rem;
+        }
     }
-
-
-
 }
 
 .tarea {

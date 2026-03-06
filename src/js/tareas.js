@@ -57,7 +57,7 @@
             const contenedorTareas = document.querySelector('#listado-tareas');
             const textoNoTareas = document.createElement('li');
             textoNoTareas.textContent = "No hay tareas";
-            textoNoTareas.classList.add('.no-tareas');
+            textoNoTareas.classList.add('no-tareas');
             contenedorTareas.appendChild(textoNoTareas);
             return;
         }
@@ -191,7 +191,7 @@
                     tarea.nombre = tareaNombre;
                     actualizarTarea(tarea);
                 } else {
-                    agregarTarea(tarea);
+                    agregarTarea(tareaNombre);
                 }
             };
         });
