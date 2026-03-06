@@ -65,6 +65,7 @@ class Email
 
         $mail->Body = $contenido;
 
+        $mail->SMTPDebug = 2;
         $mail->send();
     }
 
@@ -119,6 +120,7 @@ class Email
 
         $mail->Body = $contenido;
 
+        $mail->SMTPDebug = 2;
         $mail->send();
     }
 }
