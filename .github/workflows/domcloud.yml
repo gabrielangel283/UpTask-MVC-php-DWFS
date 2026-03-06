@@ -29,7 +29,7 @@ jobs:
             \"DB_NAME=${DATABASE}\" >> includes/.env","echo \"\" >>
             includes/.env","echo \"EMAIL_HOST=sandbox.smtp.mailtrap.io\" >> includes/.env","echo
             \"EMAIL_USER=${{ secrets.MAIL_USER }}\" >> includes/.env","echo
-            \"EMAIL_PASSWORD=${{ secrets.MAIL_PASS }}\" >> includes/.env","echo
-            \"EMAIL_PORT=2525\" >> includes/.env","echo \"\" >>
+            \"EMAIL_PASS=${{ secrets.MAIL_PASS }}\" >> includes/.env","echo
+            \"EMAIL_PORT=587\" >> includes/.env","echo \"\" >>
             includes/.env","echo \"PROJECT_URL=https://${DOMAIN}\" >>
             includes/.env","composer install"]}

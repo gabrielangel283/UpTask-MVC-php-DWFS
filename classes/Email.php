@@ -28,9 +28,10 @@ class Email
         $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->SMTPSecure = 'tls';
 
         $mail->setFrom('cuentas@uptask.com'); // el que envia el mensaje
-        $mail->addAddress('cuentas@uptask.com', 'uptask.com'); // el que lo recibe
+        $mail->addAddress($this->email, $this->nombre); // el que lo recibe
         $mail->Subject = 'Confirmar tu cuenta';
 
         $mail->isHTML(TRUE);
@@ -79,6 +80,7 @@ class Email
         $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->SMTPSecure = 'tls';
 
         $mail->setFrom('cuentas@uptask.com');
         $mail->addAddress('cuentas@uptask.com', 'uptask.com');
