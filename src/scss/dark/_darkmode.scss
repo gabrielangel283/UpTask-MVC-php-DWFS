@@ -1,5 +1,6 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as v;
+@use "sass:color";
 
 @media (prefers-color-scheme: dark) {
     $grisOscuro: #2c2c3b;
@@ -31,7 +32,7 @@
 
     .formulario .campo input,
     .dashboard .formulario input[type="password"] {
-        background-color: lighten($color: $grisOscuro, $amount: 15%);
+        background-color: color.adjust($grisOscuro, $lightness: 15%);
     }
 
     .alerta.error {
@@ -39,12 +40,12 @@
     }
 
     .barra-mobile {
-        background-color: darken($color: v.$grisOscuro, $amount: 20%);
+        background-color: color.adjust($grisOscuro, $lightness: -20%);
     }
 
     .sidebar {
         @include m.tablet {
-            background-color: darken($color: $grisOscuro, $amount: 5%);
+            background-color: color.adjust($grisOscuro, $lightness: -5%)
         }
 
         .sidebar-nav a {
@@ -63,22 +64,22 @@
             color: v.$grisClaro;
 
             &:hover {
-                color: darken($color: v.$grisClaro, $amount: 20%);
+                color: color.adjust(v.$grisClaro, $lightness: -20%);
             }
         }
 
         .formulario input:not([type="submit"]) {
-            background-color: lighten($color: $grisOscuro, $amount: 20%);
+            background-color: color.adjust($grisOscuro, $lightness: 20%);
             color: v.$blanco;
 
             &::placeholder {
-                color: darken($color: v.$grisClaro, $amount: 20%);
+                color: color.adjust(v.$grisClaro, $lightness: -20%);
             }
         }
     }
 
     .filtros {
-        background-color: lighten($color: $grisOscuro, $amount: 10%);
+        background-color: color.adjust($grisOscuro, $lightness: 10%);
 
         h2,
         label {
@@ -110,11 +111,11 @@
     }
 
     .listado-proyectos .proyecto {
-        background-color: lighten($color: $grisOscuro, $amount: 20%);
+        background-color: color.adjust($grisOscuro, $lightness: 20%);
     }
 
     .listado-tareas .tarea {
-        background-color: lighten($color: $grisOscuro, $amount: 10%);
+        background-color: color.adjust($grisOscuro, $lightness: 10%);
 
         p {
             color: v.$grisClaro;
@@ -122,15 +123,15 @@
     }
 
     .modal .formulario.nueva-tarea {
-        background-color: lighten($color: $grisOscuro, $amount: 10%);
+        background-color: color.adjust($grisOscuro, $lightness: 10%);
 
         input[type="text"] {
-            background-color: lighten($color: $grisOscuro, $amount: 20%);
+            background-color: color.adjust($grisOscuro, $lightness: 20%);
             border: none;
             color: v.$blanco;
 
             &::placeholder {
-                color: darken($color: v.$grisClaro, $amount: 20%);
+                color: color.adjust(v.$grisClaro, $lightness: -20%);
             }
         }
 

@@ -1,8 +1,9 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as v;
+@use "sass:color";
 
 .filtros {
-    background-color: lighten($color: v.$blanco, $amount: 20);
+    background-color: color.adjust(v.$blanco, $lightness: 20%);
     margin-top: 2rem;
     border-radius: 1rem;
     padding: 2rem;

@@ -1,5 +1,6 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as v;
+@use "sass:color";
 
 .sidebar {
     opacity: 0;
@@ -83,9 +84,8 @@
 
             &:hover,
             &.activo {
-                background-color: darken($color: v.$indigo, $amount: 20%);
+                background-color: color.adjust(v.$indigo, $lightness: -20%);
                 border-radius: 0.5rem;
-
             }
 
             @include m.tablet {

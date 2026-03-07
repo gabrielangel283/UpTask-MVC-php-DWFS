@@ -1,4 +1,5 @@
 @use 'base/variables' as v;
+@use "sass:color";
 
 /** Media Queries **/
 @mixin telefono {
@@ -39,7 +40,7 @@
     }
 
     &:hover {
-        background-color: darken($bgColor, 10%);
+        background-color: color.adjust($bgColor, $lightness: -10%);
         cursor: pointer;
     }
 }
@@ -51,7 +52,7 @@
 }
 
 @mixin textDegradado($color) {
-    background: linear-gradient(to right, $color 0%, lighten($color, 30%) 100%);
+    background: linear-gradient(to right, $color 0%, color.adjust($color, $lightness: 30%) 100%);
     color: transparent;
     background-clip: text;
     font-size: 7rem;

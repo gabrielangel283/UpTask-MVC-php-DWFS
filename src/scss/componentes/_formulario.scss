@@ -1,6 +1,6 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
-
+@use "sass:color";
 
 .formulario {
     margin-top: 5rem;
@@ -15,7 +15,7 @@
         input {
             padding: 1rem;
             border: 1px solid rgb(165, 155, 155);
-            background-color: lighten($color: v.$gris, $amount: 40%);
+            background-color: color.adjust(v.$gris, $lightness: 40%);
             width: 90%;
         }
 
