@@ -24,13 +24,13 @@ class Email
         $mail = new PHPMailer();
         $mail->isSMTP();
         $mail->Host = $_ENV['EMAIL_HOST'];
-        $mail->SMTPAuth = true;
         $mail->Port = $_ENV['EMAIL_PORT'];
+        $mail->SMTPAuth = true;
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
         $mail->SMTPSecure = 'tls';
 
-        $mail->setFrom('cuentas@uptask.com'); // el que envia el mensaje
+        $mail->setFrom('info@uptask-mvc-php-dwfs.sao.dom.my.id', 'UpTask'); // el que envia el mensaje - ya en produccion real
         $mail->addAddress($this->email, $this->nombre); // el que lo recibe
         $mail->Subject = 'Confirmar tu cuenta';
 
@@ -82,7 +82,7 @@ class Email
         $mail->Password = $_ENV['EMAIL_PASS'];
         $mail->SMTPSecure = 'tls';
 
-        $mail->setFrom('cuentas@uptask.com');
+        $mail->setFrom('info@uptask-mvc-php-dwfs.sao.dom.my.id', 'UpTask'); // el que envia el mensaje - ya en produccion real
         $mail->addAddress('cuentas@uptask.com', 'uptask.com');
         $mail->Subject = 'Reestablece tu password';
 
