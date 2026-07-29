@@ -35,7 +35,7 @@ jobs:
                 "echo \"DB_USER=${USERNAME}\" >> .env",
                 "echo \"DB_PASS=${PASSWORD}\" >> .env",
                 "echo \"DB_NAME=${DATABASE}\" >> .env",
-                "echo \"PROJECT_URL=https://uptask-mvc-php-dwfs.sao.dom.my.id/" >> .env",
+                "echo \"PROJECT_URL=https://uptask-mvc-php-dwfs.sao.dom.my.id\" >> .env",
                 "composer install"
               ]
             }
