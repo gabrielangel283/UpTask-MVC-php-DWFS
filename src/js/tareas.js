@@ -25,7 +25,6 @@
         } else {
             filtradas = [];
         }
-
         mostrarTareas();
     }
 
@@ -107,8 +106,6 @@
 
             const listadoTareas = document.querySelector('#listado-tareas')
             listadoTareas.appendChild(contenedorTarea);
-
-
         });
     }
 
@@ -200,8 +197,6 @@
     }
 
     function mostrarAlerta(mensaje, tipo, referencia) {
-        // verificar si ya hay una alerta
-
         const alertaPrevia = document.querySelector('alerta');
         if (alertaPrevia) {
             alertaPrevia.remove();
@@ -242,12 +237,11 @@
 
             mostrarAlerta(resultado.mensaje, resultado.tipo, document.querySelector('.formulario legend'));
 
-
             if (resultado.tipo === 'exito') {
                 const modal = document.querySelector('.modal');
                 setTimeout(() => {
                     modal.remove();
-                }, 3000);
+                }, 2000);
 
                 // agregar el objeto de tarea al global de tareas
                 const tareaObj = {
@@ -260,21 +254,15 @@
                 tareas = [...tareas, tareaObj];
                 mostrarTareas(tareas);
             }
-
         } catch (error) {
             console.log(error)
         }
-
-
     }
 
     function cambiarEstadoTarea(tarea) {
-
         const nuevoEstado = tarea.estado === '1' ? '0' : '1';
         tarea.estado = nuevoEstado;
-
         actualizarTarea(tarea);
-
     }
 
     async function actualizarTarea(tarea) {
@@ -285,7 +273,6 @@
         datos.append('nombre', nombre);
         datos.append('estado', estado);
         datos.append('proyectoId', obtenerProyecto());
-
 
         try {
             const url = `${location.origin}/api/tarea/actualizar`;
@@ -316,9 +303,7 @@
                     }
                     return tareaMemoria;
                 });
-
                 mostrarTareas();
-
             }
         } catch (error) {
             console.log(error)
@@ -359,13 +344,9 @@
             const resultado = await respuesta.json();
 
             if (resultado.resultado) {
-
                 Swal.fire('Eliminado!', resultado.mensaje, 'success')
-
                 tareas = tareas.filter(tareaMemoria => tareaMemoria.id != id);
-
                 mostrarTareas();
-
             }
         } catch (error) {
             console.log(error);
@@ -383,7 +364,4 @@
         const listadoTareas = document.querySelector('#listado-tareas');
         listadoTareas.innerHTML = '';
     }
-
-
-
 })();

@@ -16,20 +16,26 @@ jobs:
           webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
           webhook_auth: ${{ secrets.WEBHOOK_AUTH }}
           data: >-
-            {"features":[{"create":{"domain":"uptask-mvc-php-dwfs.sao.dom.my.id","user":"uptask-mvc-php-dwfs","pass":"<redacted>","email":"gaboangel.co@gmail.com"}},"firewall","php
-            8.3","mysql","ssl","ssl always","ssl","ssl
-            always"],"source":"https://github.com/gabrielangel283/UpTask-MVC-php-DWFS.git","root":"public_html/public","nginx":{"fastcgi":"on","locations":[{"match":"/","try_files":"$uri
-            $uri/ /index.php$is_args$args"},{"match":"~
-            \\.[^\\/]+(?<!\\.php)$","try_files":"$uri =404"}]},"commands":["echo
-            \"<?php phpinfo(15);\" > phpinfo.php","echo \"display_errors = On\"
-            > .user.ini","echo \"display_startup_errors = On\" >>
-            .user.ini","echo \"DB_HOST=localhost\" > includes/.env","echo
-            \"DB_USER=${USERNAME}\" >> includes/.env","echo
-            \"DB_PASS=${PASSWORD}\" >> includes/.env","echo
-            \"DB_NAME=${DATABASE}\" >> includes/.env","echo \"\" >>
-            includes/.env","echo \"EMAIL_HOST=live.smtp.mailtrap.io\" >> includes/.env","echo
-            \"EMAIL_USER=${{ secrets.MAIL_USER }}\" >> includes/.env","echo
-            \"EMAIL_PASS=${{ secrets.MAIL_PASS }}\" >> includes/.env","echo
-            \"EMAIL_PORT=587\" >> includes/.env","echo \"\" >>
-            includes/.env","echo \"PROJECT_URL=https://${DOMAIN}\" >>
-            includes/.env","composer install"]}
+            {
+              "features": [
+                {"create": {"domain": "uptask-mvc-php-dwfs.sao.dom.my.id", "user": "uptask-mvc-php-dwfs", "pass": "<redacted>", "email": "gaboangel.co@gmail.com"}},
+                "firewall", "php 8.3", "mysql", "ssl", "ssl always"
+              ],
+              "source": "https://github.com/gabrielangel283/UpTask-MVC-php-DWFS.git",
+              "root": "public_html/public",
+              "nginx": {
+                "fastcgi": "on",
+                "locations": [
+                  {"match": "/", "try_files": "$uri $uri/ /index.php$is_args$args"},
+                  {"match": "~ \\.[^\\/]+(?<!\\.php)$", "try_files": "$uri =404"}
+                ]
+              },
+              "commands": [
+                "echo \"DB_HOST=localhost\" > .env",
+                "echo \"DB_USER=${USERNAME}\" >> .env",
+                "echo \"DB_PASS=${PASSWORD}\" >> .env",
+                "echo \"DB_NAME=${DATABASE}\" >> .env",
+                "echo \"PROJECT_URL=https://uptask-mvc-php-dwfs.sao.dom.my.id/" >> .env",
+                "composer install"
+              ]
+            }

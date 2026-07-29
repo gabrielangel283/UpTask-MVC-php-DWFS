@@ -5,7 +5,7 @@ use Model\ActiveRecord;
 require __DIR__ . '/../vendor/autoload.php';
 
 // Habilitar el uso de las variables de entorno
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/..");
 $dotenv->safeLoad();
 
 require 'funciones.php';
